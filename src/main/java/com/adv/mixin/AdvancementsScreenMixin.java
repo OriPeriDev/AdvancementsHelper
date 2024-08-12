@@ -62,7 +62,7 @@ public class AdvancementsScreenMixin extends Screen implements AdvancementsScree
         super.render(context, mouseX, mouseY, delta);
         // Modify the x position
         int i = (this.width - 252) / 2 + xOffset;
-        int j = (this.height - 240) / 2;
+        int j = (this.height - 140) / 2;
 
         // Call the original render method with the new x and y positions
         this.drawAdvancementTree(context, mouseX, mouseY, i, j);
@@ -106,8 +106,8 @@ public class AdvancementsScreenMixin extends Screen implements AdvancementsScree
 
         RenderSystem.enableBlend();
 
-        context.drawTexture(BACKGROUND_TEXTURE, x+252, y, 0, 0, 100, 240);
-        context.drawTexture(FRAME_TEXTURE, x+252, y, 0, 0, 100, 240);
+        context.drawTexture(BACKGROUND_TEXTURE, x+252, y, 0, 0, 100, 140);
+        context.drawTexture(FRAME_TEXTURE, x+252, y, 0, 0, 100, 140);
         int requirementY = y+6;
         int requirementX = x+260;
 
@@ -117,7 +117,7 @@ public class AdvancementsScreenMixin extends Screen implements AdvancementsScree
             requirementX +=3;
             requirementY += 15+infoScreenScroll;
             int borderTop = y +15;
-            int borderBottom = y+240-10;
+            int borderBottom = y+140-10;
             for (String requirement : currentProgress.getUnobtainedCriteria()) {
                 if(requirementY>borderTop&&requirementY<borderBottom){
                     requirementText = Text.literal(requirement);
@@ -181,7 +181,7 @@ public class AdvancementsScreenMixin extends Screen implements AdvancementsScree
 
         if (button == 0) {
             int x = (this.width - 252) / 2 + xOffset; // Apply the xOffset here as well
-            int y = (this.height - 240) / 2;
+            int y = (this.height - 140) / 2;
             for (AdvancementTab advancementTab : this.tabs.values()) {
                 if (advancementTab.isClickOnTab(x, y, mouseX, mouseY)) {
                     this.advancementHandler.selectTab(advancementTab.getRoot().getAdvancementEntry(), true);
