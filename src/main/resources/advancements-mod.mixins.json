@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.adv.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ExampleMixin",
+		"AdvancementWidgetMixin",
+		"AdvancementTabMixin",
+		"AdvancementsScreenMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
